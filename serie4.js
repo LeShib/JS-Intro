@@ -1,27 +1,33 @@
 // Exercice 4.1
 /*
- * [calcSurface -> calcule l'aire d'un rectangle]
- * @param  {[int]} length [longueur du rectangle]
- * @param  {[int]} width  [largeur du rectangle]
- * @return {[int]}        [aire du rectangle (longueur x largeur)]
- */
+    * [calcSurface -> calcule l'aire d'un rectangle]
+    * @param  {[int]} length [longueur du rectangle]
+    * @param  {[int]} width  [largeur du rectangle]
+    * @return {[int]}        [aire du rectangle (longueur x largeur)]
+*/
 // let calcSurface = (length, width) => length * width
-// console.log(calcSurface(4, 3));
+// let lengthRect = window.prompt("Enter the length of a rectangle");
+// let widthRect = window.prompt("Enter the width of a rectangle");
+// console.log(calcSurface(length, width));
 
 
 // Exercice 4.2
 /*
- * [rand10 -> donne un nombre alétoire de 1 à 10]
- * @param  {[int]} min [nombre min]
- * @param  {[int]} max [nombre max non-inclu]
- * @return {[int]}     [retourne un nombre entier aléatoire compris entre le min et le max(non-inclu)/(max-1)]
- */
+    * [rand10 -> donne un nombre alétoire de 1 à 10]
+    * @param  {[int]} min [nombre min]
+    * @param  {[int]} max [nombre max non-inclu]
+    * @return {[int]}     [retourne un nombre entier aléatoire compris entre le min et le max(non-inclu)/(max-1)]
+*/
 // let rand10 = (min, max) => Math.floor(Math.random() * (max - min)) + min
 // console.log(rand10(1, 11));
 
 
 // Exercice 4.3
-
+/*
+    * [multiRand -> donne un tableau de plusieurs nombres alétoires de 1 à 10]
+    * @param  {[int]} length [taille du tableau de nombres]
+    * @return {[int]}        [retourne un tableau de nombres entiers aléatoires compris entre 1 et 10]
+*/
 // let rand10 = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 // // function multiRand(length){
 // //     let arr = [];
@@ -62,7 +68,7 @@
 //     return newArr;
 // }
 
-// length = window.prompt("Enter a size for the array : ");
+// let length = window.prompt("Enter a size for the array : ");
 // while(length<=0 || length>arr.length){
 //     length = window.prompt("Enter a new size for the array (between 0 and "+arr.length+") :");
 // }
@@ -70,22 +76,41 @@
 
 
 // Exercice 4.5
-// Créez une fonction nommée calcDistance qui prend les coordonnées de deux points différents A et B dans un espace 2D. Cette fonction doit renvoyer la distance entre ces deux points.
+/*
+    * [calcDistance -> calcule la distance entre 2 points[x, y]]
+    * @param  {[int[]]} a [tab contenant les positions x et y d'un point]
+    * @param  {[int[]]} b [tab contenant les positions x et y d'un point]
+    * @return {[int]}     [distance entre a et b]
+*/
 
-// Exemples de résultats :
-// Point A = [1, 1], point B = [2, 2] => 1,41
-// Point A = [1, 1], point B = [3, 1] => 2
-// Point A = [4, 1], point B = [1, 1] => 3
-// Point A = [-2, 2], point B = [2, -2] => 5,65
-// Créez un programme pour utiliser cette fonction.
-// Ecrire une documentation pour la calcDistancefonction.
-// Remarque : Vous devez probablement effectuer une recherche sur Google pour connaître la formule mathématique permettant de le faire. Vous aurez aussi probablement besoin de chercher des fonctions utiles en JavaScript pour vous aider à faire des formules mathématiques complexes...
+// let a = [1, 1];
+// let b = [2, 2];
+// let c = [3, 1];
+// let d = [4, 1];
+// let e = [-2, 2];
+// let f = [2, -2];
 
-function calcDistance(a, b){
-    
-}
+// // function calcDistance(a, b){
+// //     return Math.sqrt(((b[0]-a[0])*(b[0]-a[0]))+((b[1]-a[1])*(b[1]-a[1])));
+// // }
+// let calcDistance = (a, b) => Math.sqrt(((b[0]-a[0])*(b[0]-a[0]))+((b[1]-a[1])*(b[1]-a[1])));
+
+// console.log(calcDistance(a, b));
+// console.log(calcDistance(a, c));
+// console.log(calcDistance(d, a));
+// console.log(calcDistance(e, f));
 
 
 // Exercice 4.6
-// Créez une fonction factorial(a)qui renvoie la factorielle d'un nombre.
-// Cette fonction doit être récursive.
+
+function factorial(a){
+    if(a==0){
+        return 1;
+    }
+    else{
+        return a * factorial(a-1);
+    }
+}
+
+let value = window.prompt("enter the value for which you want the factorial :");
+console.log(factorial(value));
